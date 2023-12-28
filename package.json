@@ -1,0 +1,94 @@
+{
+  "name": "runcode",
+  "displayName": "RunCode C/C++",
+  "description": "Build và chạy code C/C++ trên hệ điều hành Windows",
+  "version": "0.0.1",
+  "publisher": "tripleseven190504",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tripleseven190504/runcode_c_cpp"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters",
+    "Programming Languages",
+    "Linters"
+  ],
+  "extensionDependencies": [
+    "ms-vscode.cpptools"
+  ],
+  "keywords": [
+    "C",
+    "C++",
+    "cpp",
+    "run"
+  ],
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.buildCode",
+        "title": "Chạy code",
+        "icon": "$(debug-start)"
+      },
+      {
+        "command": "C_Cpp.debugShortcut",
+        "title": "Debug",
+        "key": false
+      },
+      {
+        "command": "extension.stopCode",
+        "title": "Dừng code",
+        "icon": "$(debug-stop)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.buildCode",
+        "key": "F6",
+        "mac": "F6",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.buildCode",
+          "group": "navigation",
+          "when": "resourceLangId == c || resourceLangId == cpp && !extension.buildCode.isCodeRunning"
+        },
+        {
+          "command": "extension.stopCode",
+          "group": "navigation",
+          "when": "resourceLangId == c || resourceLangId == cpp && extension.buildCode.isCodeRunning"
+        }
+      ]
+    },
+    "statusbar": [
+      {
+        "command": "extension.buildCode",
+        "text": "$(play) Chạy",
+        "tooltip": "Click để chạy code của bạn",
+        "alignment": "left",
+        "priority": 100
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
