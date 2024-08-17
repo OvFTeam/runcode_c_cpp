@@ -38,7 +38,7 @@ Phần mở rộng **RunCode C/C++** được thiết kế để xây dựng và
 
 Nếu bạn muốn đóng góp vào phát triển của phần mở rộng **RunCode C/C++**, bạn có thể làm theo các bước sau:
 
-1. Fork dự án trên GitHub: [RunCode C/C++](https://github.com/tripleseven190504/runcode_c_cpp)
+1. Fork dự án trên GitHub: [RunCode C/C++](https://github.com/ovfteam/runcode_c_cpp)
 2. Tạo một nhánh mới cho các thay đổi của bạn: `git checkout -b my-feature`
 3. Thực hiện các thay đổi cần thiết và commit: `git commit -am 'Add new feature'`
 4. Push nhánh của bạn lên repository của bạn: `git push origin my-feature`
